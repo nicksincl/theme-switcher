@@ -9,11 +9,70 @@
   </head>
   <body>
     <nav>
-      <a href="/" aria-current="page">Home</a>
+      <fieldset>
+        <legend>Theme</legend>
+        <p>
+          <label for="theme">Theme:</label>
+          <select type="theme" name="theme">
+            <option value="dark">Dark</option>
+            <option value="Light">Light</option>
+          </select>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Color</legend>
+        <p>
+          <label for="main">Main:</label>
+          <input type="color" name="main" />
+        </p>
+        <p>
+          <label for="secondary">Secondary:</label>
+          <input type="color" name="secondary" />
+        </p>
+        <p>
+          <label for="accent">Accent:</label>
+          <input type="color" name="accent" />
+        </p>
+        <p>
+          <label for="text">Text:</label>
+          <input type="color" name="text" />
+        </p>
+        <p>
+          <label for="background">Background:</label>
+          <input type="color" name="background" />
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Spacing</legend>
+        <p>
+          <input type="radio" name="small" />
+          <label for="small">Small</label>
+        </p>
+        <p>
+          <input type="radio" name="medium" />
+          <label for="medium">Medium</label>
+        </p>
+        <p>
+          <input type="radio" name="large" />
+          <label for="large">Large</label>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Border radius</legend>
+        <input type="range" />
+      </fieldset>
+      <a
+        href="https://www.figma.com/file/FbPKrYDqpyxVGlccfDaG40/theme-switcher?node-id=2%3A2"
+        target="_blank"
+        >Figma Design</a
+      >
     </nav>
     <main>
       <h1>Theme Switcher</h1>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, totam minus!</p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, totam
+        minus!
+      </p>
       <section>
         <h2>Table of Contents</h2>
         <ol>
