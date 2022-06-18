@@ -1,8 +1,5 @@
 * {
   box-sizing: border-box;
-}
-
-body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -26,6 +23,7 @@ main {
   height: 100vh;
   margin: 0 auto;
   width: 50%;
+  padding-top: 60px;
 }
 
 nav {
@@ -37,6 +35,37 @@ nav {
   left: 0;
   z-index: 5;
   padding: 30px;
+}
+
+.label-top label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.label-top input {
+  display: block;
+  width: 100%;
+}
+
+.label-top select {
+  display: block;
+  width: 100%;
+}
+
+input[type='color'] {
+  border: 1px solid #2f80ed;
+  height: 24px;
+}
+
+input[type='radio'] {
+  width: 12px;
+  height: 12px;
+  margin: 3px auto 3px 0px;
+}
+
+select {
+  border: 1px solid #2f80ed;
+  height: 24px;
 }
 
 #logo {
@@ -51,4 +80,14 @@ fieldset {
 fieldset legend {
   font-size: 1.125rem;
   font-weight: 700;
+  padding: 0;
+}
+
+header,
+section {
+  margin-bottom: 60px;
+}
+
+section h2 {
+  border-bottom: 2px solid #2f80ed;
 }

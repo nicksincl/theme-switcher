@@ -27,51 +27,62 @@
         />
       </svg>
 
-      <fieldset>
+      <fieldset class="label-top">
         <legend>Theme</legend>
         <p>
-          <label for="theme">Theme:</label>
+          <label for="theme">Theme</label>
           <select type="theme" name="theme">
             <option value="dark">Dark</option>
             <option value="Light">Light</option>
           </select>
         </p>
       </fieldset>
-      <fieldset>
+      <fieldset class="label-top">
         <legend>Color</legend>
         <p>
-          <label for="main">Main:</label>
+          <label for="main">Main</label>
           <input type="color" name="main" />
         </p>
         <p>
-          <label for="secondary">Secondary:</label>
+          <label for="secondary">Secondary</label>
           <input type="color" name="secondary" />
         </p>
         <p>
-          <label for="accent">Accent:</label>
+          <label for="accent">Accent</label>
           <input type="color" name="accent" />
         </p>
-        <p>
-          <label for="text">Text:</label>
+        <!--         <p>
+          <label for="text">Text</label>
           <input type="color" name="text" />
         </p>
         <p>
-          <label for="background">Background:</label>
+          <label for="background">Background</label>
           <input type="color" name="background" />
+        </p> -->
+      </fieldset>
+      <fieldset class="label-top">
+        <legend>Font</legend>
+        <p>
+          <label for="theme">Family</label>
+          <select type="theme" name="theme">
+            <option value="times-new-roman">Times New Roman</option>
+            <option value="papyrus">Papyrus</option>
+            <option value="verduna">Verduna</option>
+          </select>
         </p>
       </fieldset>
       <fieldset>
         <legend>Spacing</legend>
         <p>
-          <input type="radio" name="small" />
+          <input type="radio" name="spacing" value="small" id="small" />
           <label for="small">Small</label>
         </p>
         <p>
-          <input type="radio" name="medium" />
+          <input type="radio" name="spacing" value="medium" id="medium" />
           <label for="medium">Medium</label>
         </p>
         <p>
-          <input type="radio" name="large" />
+          <input type="radio" name="spacing" value="large" id="large" />
           <label for="large">Large</label>
         </p>
       </fieldset>
