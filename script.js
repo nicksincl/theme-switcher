@@ -7,28 +7,34 @@ function startup() {
   secondaryColor = document.querySelector('#secondary-color');
   accentColor = document.querySelector('#accent-color');
 
-  mainColor.addEventListener('input', updateFirst, false);
-  mainColor.addEventListener('change', updateAll, false);
-  secondaryColor.addEventListener('input', updateFirst, false);
-  secondaryColor.addEventListener('change', updateAll, false);
-  accentColor.addEventListener('input', updateFirst, false);
-  accentColor.addEventListener('change', updateAll, false);
+  mainColor.addEventListener('input', updateFirst('--main-color'), false);
+  mainColor.addEventListener('change', updateAll('--main-color'), false);
+  secondaryColor.addEventListener(
+    'input',
+    updateFirst('--secondary-color'),
+    false
+  );
+  secondaryColor.addEventListener(
+    'change',
+    updateAll('--secondary-color'),
+    false
+  );
+  accentColor.addEventListener('input', updateFirst('--accent-color'), false);
+  accentColor.addEventListener('change', updateAll('--accent-color'), false);
 
   mainColor.select();
   secondaryColor.select();
   accentColor.select();
 }
 
-function updateFirst(event) {
-  document.documentElement.style.setProperty(
-    '--main-color',
-    event.target.value
-  );
+function updateFirst(color) {
+  return function (event) {
+    document.documentElement.style.setProperty(color, event.target.value);
+  };
 }
 
-function updateAll(event) {
-  document.documentElement.style.setProperty(
-    '--main-color',
-    event.target.value
-  );
+function updateAll(color) {
+  return function (event) {
+    document.documentElement.style.setProperty(color, event.target.value);
+  };
 }

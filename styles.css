@@ -93,3 +93,11 @@ section {
 section h2 {
   border-bottom: var(--spacing-base) solid var(--main-color);
 }
+
+#logo-main-color {
+  fill: var(--main-color);
+}
+
+#logo-secondary-color {
+  fill: var(--secondary-color);
+}
