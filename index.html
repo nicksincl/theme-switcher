@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css" />
+
     <script type="module" src="script.js"></script>
   </head>
   <body>
@@ -19,7 +20,8 @@
       >
         <path
           d="M36 18C36 27.9411 27.9411 36 18 36C8.05887 36 0 27.9411 0 18C0 8.05887 8.05887 0 18 0C27.9411 0 36 8.05887 36 18Z"
-          fill="#F2994A" id="logo-secondary-color"
+          fill="#F2994A"
+          id="logo-secondary-color"
         />
         <path
           d="M39 21C39 30.9411 30.9411 39 21 39C11.0589 39 3 30.9411 3 21C3 11.0589 11.0589 3 21 3C30.9411 3 39 11.0589 39 21Z"
@@ -32,9 +34,9 @@
         <legend>Theme</legend>
         <p>
           <label for="theme">Theme</label>
-          <select type="theme" name="theme">
+          <select id="theme" type="theme" name="theme">
+            <option value="light">Light</option>
             <option value="dark">Dark</option>
-            <option value="Light">Light</option>
           </select>
         </p>
       </fieldset>
@@ -69,8 +71,8 @@
       <fieldset class="label-top">
         <legend>Font</legend>
         <p>
-          <label for="theme">Family</label>
-          <select type="theme" name="theme">
+          <label for="family">Family</label>
+          <select id="font-family" type="family" name="family">
             <option value="times-new-roman">Times New Roman</option>
             <option value="papyrus">Papyrus</option>
             <option value="verduna">Verduna</option>
@@ -126,15 +128,15 @@
           <li>Buttons</li>
         </ol>
       </nav>
-      <br />
+
       <section>
         <h2>1. Table</h2>
       </section>
-      <br />
+
       <section>
         <h2>2. Forms</h2>
       </section>
-      <br />
+
       <section>
         <h2>3. Buttons</h2>
       </section>

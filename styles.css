@@ -4,21 +4,28 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+body {
+  background-color: var(--white-color);
+}
 
 h1 {
   font-size: var(--font-size-xl);
+  color: var(--black-color);
 }
 
 h2 {
   font-size: var(--font-size-l);
+  color: var(--black-color);
 }
 
 h3 {
   font-size: var(--font-size-m);
+  color: var(--black-color);
 }
 
 p {
   font-size: var(--font-size-s);
+  color: var(--black-color);
 }
 
 main {
@@ -37,37 +44,35 @@ form {
   left: 0;
   z-index: 5;
   padding: 30px;
+  overflow-y: auto;
 }
 
-.label-top label {
+.label-top label,
+.label-top input,
+.label-top select {
   display: block;
+}
+
+.label-top input,
+.label-top select {
+  width: 100%;
+}
+.label-top label {
   margin-bottom: calc(var(--spacing-base) * 2);
 }
 
-.label-top input {
-  display: block;
-  width: 100%;
-}
-
-.label-top select {
-  display: block;
-  width: 100%;
-}
-
-input[type='color'] {
-  border: 1px solid var(--main-color);
+input[type='color'],
+select {
+  background: none;
+  color: var(--black-color);
   height: calc(var(--spacing-base) * 12);
+  border: 1px solid var(--main-color);
 }
 
 input[type='radio'] {
   width: 12px;
   height: 12px;
   margin: 3px auto 3px 0px;
-}
-
-select {
-  border: 1px solid var(--main-color);
-  height: calc(var(--spacing-base) * 12);
 }
 
 #logo {
@@ -81,6 +86,7 @@ fieldset {
 
 fieldset legend {
   font-size: var(--font-size-m);
+  color: var(--black-color);
   font-weight: 700;
   padding: 0;
 }
