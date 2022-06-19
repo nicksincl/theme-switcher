@@ -19,7 +19,7 @@
       >
         <path
           d="M36 18C36 27.9411 27.9411 36 18 36C8.05887 36 0 27.9411 0 18C0 8.05887 8.05887 0 18 0C27.9411 0 36 8.05887 36 18Z"
-          fill="#F2994A"
+          fill="#F2994A" 
         />
         <path
           d="M39 21C39 30.9411 30.9411 39 21 39C11.0589 39 3 30.9411 3 21C3 11.0589 11.0589 3 21 3C30.9411 3 39 11.0589 39 21Z"
@@ -41,15 +41,15 @@
         <legend>Color</legend>
         <p>
           <label for="main">Main</label>
-          <input type="color" name="main" />
+          <input id="main-color" type="color" name="main" value="#2f80ed" />
         </p>
         <p>
           <label for="secondary">Secondary</label>
-          <input type="color" name="secondary" />
+          <input id="secondary-color" type="color" name="secondary" value="#f2994a" />
         </p>
         <p>
           <label for="accent">Accent</label>
-          <input type="color" name="accent" />
+          <input id="accent-color" type="color" name="accent" value="#f2f2f2" />
         </p>
         <!--         <p>
           <label for="text">Text</label>
@@ -78,7 +78,13 @@
           <label for="small">Small</label>
         </p>
         <p>
-          <input type="radio" name="spacing" value="medium" id="medium" />
+          <input
+            type="radio"
+            name="spacing"
+            value="medium"
+            id="medium"
+            checked="checked"
+          />
           <label for="medium">Medium</label>
         </p>
         <p>

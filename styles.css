@@ -36,7 +36,7 @@ form {
   top: 0;
   left: 0;
   z-index: 5;
-  padding: calc(var(--spacing-base) * 15);
+  padding: 30px;
 }
 
 .label-top label {
