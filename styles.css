@@ -1,45 +1,47 @@
+@import 'variables.css';
+
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: var(--font-size-xl);
 }
 
 h2 {
-  font-size: 1.375rem;
+  font-size: var(--font-size-l);
 }
 
 h3 {
-  font-size: 1.125rem;
+  font-size: var(--font-size-m);
 }
 
 p {
-  font-size: 1rem;
+  font-size: var(--font-size-s);
 }
 
 main {
   height: 100vh;
   margin: 0 auto;
+  margin-top: calc(var(--spacing-base) * 48);
   width: 50%;
-  padding-top: 60px;
 }
 
 nav {
   height: 100vh;
   position: fixed;
-  background-color: #d9d9d9;
+  background-color: var(--accent-color);
   width: 220px;
   top: 0;
   left: 0;
   z-index: 5;
-  padding: 30px;
+  padding: calc(var(--spacing-base) * 15);
 }
 
 .label-top label {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: calc(var(--spacing-base) * 2);
 }
 
 .label-top input {
@@ -53,8 +55,8 @@ nav {
 }
 
 input[type='color'] {
-  border: 1px solid #2f80ed;
-  height: 24px;
+  border: 1px solid var(--main-color);
+  height: calc(var(--spacing-base) * 12);
 }
 
 input[type='radio'] {
@@ -64,30 +66,30 @@ input[type='radio'] {
 }
 
 select {
-  border: 1px solid #2f80ed;
-  height: 24px;
+  border: 1px solid var(--main-color);
+  height: calc(var(--spacing-base) * 12);
 }
 
 #logo {
-  margin-bottom: 30px;
+  margin-bottom: calc(var(--spacing-base) * 15);
 }
 
 fieldset {
   border: none;
-  padding: 0px 0px 30px 0px;
+  padding: 0px 0px calc(var(--spacing-base) * 15) 0px;
 }
 
 fieldset legend {
-  font-size: 1.125rem;
+  font-size: var(--font-size-m);
   font-weight: 700;
   padding: 0;
 }
 
 header,
 section {
-  margin-bottom: 60px;
+  margin-bottom: calc(var(--spacing-base) * 30);
 }
 
 section h2 {
-  border-bottom: 2px solid #2f80ed;
+  border-bottom: var(--spacing-base) solid var(--main-color);
 }
