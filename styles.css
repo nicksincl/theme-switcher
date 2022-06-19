@@ -28,7 +28,7 @@ main {
   width: 50%;
 }
 
-nav {
+form {
   height: 100vh;
   position: fixed;
   background-color: var(--accent-color);
