@@ -45,24 +45,30 @@ function updateAll(color) {
 }
 
 function updateTheme() {
-  if (theme.value == 'light') {
-    mainColor.value = '#2f80ed';
-    secondaryColor.value = '#f2994a';
-    accentColor.value = '#f2f2f2';
-    document.documentElement.style.setProperty('--main-color', '#2f80ed');
-    document.documentElement.style.setProperty('--secondary-color', '#f2994a');
-    document.documentElement.style.setProperty('--accent-color', '#f2f2f2');
-    document.documentElement.style.setProperty('--black-color', '#000000');
-    document.documentElement.style.setProperty('--white-color', '#ffffff');
-  } else {
-    mainColor.value = '#0f2747';
-    secondaryColor.value = '#835126';
-    accentColor.value = '#272727';
-    document.documentElement.style.setProperty('--main-color', '#579FFF');
-    document.documentElement.style.setProperty('--secondary-color', '#FE973E');
-    document.documentElement.style.setProperty('--accent-color', '#272727');
-    document.documentElement.style.setProperty('--black-color', '#ffffff');
-    document.documentElement.style.setProperty('--white-color', '#0D0D0D');
+  let colObj = {
+    dark: {
+      '--main-color': '#579fff',
+      '--secondary-color': '#fe973e',
+      '--accent-color': '#272727',
+      '--black-color': '#ffffff',
+      '--white-color': '#0d0d0d',
+    },
+    light: {
+      '--main-color': '#2f80ed',
+      '--secondary-color': '#f2994a',
+      '--accent-color': '#f2f2f2',
+      '--black-color': '#1c1c1c',
+      '--white-color': '#ffffff',
+    },
+  };
+  let themeCols = colObj[theme.value];
+  mainColor.value = themeCols['--main-color'];
+  secondaryColor.value = themeCols['--secondary-color'];
+  accentColor.value = themeCols['--accent-color'];
+
+  for (const colProperty in themeCols) {
+    let hex = themeCols[colProperty];
+    document.documentElement.style.setProperty(colProperty, hex);
   }
 }
 
