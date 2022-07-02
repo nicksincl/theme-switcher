@@ -44,31 +44,13 @@ function updateAll(color) {
   };
 }
 
-function updateTheme() {
-  let colObj = {
-    dark: {
-      '--main-color': '#579fff',
-      '--secondary-color': '#fe973e',
-      '--accent-color': '#272727',
-      '--black-color': '#ffffff',
-      '--white-color': '#0d0d0d',
-    },
-    light: {
-      '--main-color': '#2f80ed',
-      '--secondary-color': '#f2994a',
-      '--accent-color': '#f2f2f2',
-      '--black-color': '#1c1c1c',
-      '--white-color': '#ffffff',
-    },
-  };
-  let themeCols = colObj[theme.value];
-  mainColor.value = themeCols['--main-color'];
-  secondaryColor.value = themeCols['--secondary-color'];
-  accentColor.value = themeCols['--accent-color'];
+function updateTheme(event) {
+  let stylesheet = document.getElementById('mode');
 
-  for (const colProperty in themeCols) {
-    let hex = themeCols[colProperty];
-    document.documentElement.style.setProperty(colProperty, hex);
+  if (event.target.value === 'dark') {
+    stylesheet.href = 'dark.css';
+  } else if (event.target.value === 'light') {
+    stylesheet.href = 'light.css';
   }
 }
 
