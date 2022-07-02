@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--global-font-family);
 }
 body {
   background-color: var(--white-color);
@@ -45,7 +45,8 @@ form {
   overflow-y: auto;
 }
 
-input, select{
+input,
+select {
   border-radius: var(--global-border-radius);
 }
 

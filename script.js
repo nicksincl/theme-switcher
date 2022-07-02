@@ -37,6 +37,9 @@ function startup() {
   accentColor.addEventListener('input', updateFirst('--accent-color'), false);
   accentColor.addEventListener('change', updateAll('--accent-color'), false);
 
+  fontFamily = document.querySelector('#font-family');
+  fontFamily.addEventListener('change', updateTheme, false);
+
   spacingRadios = document.querySelectorAll('input');
   for (const radio of spacingRadios) {
     radio.onclick = function (event) {
@@ -55,7 +58,7 @@ function startup() {
   borderRadius.addEventListener('input', updateBorderRadius, false);
 }
 
-function updateBorderRadius() {
+function updateBorderRadius(event) {
   document.documentElement.style.setProperty(
     '--global-border-radius',
     event.target.value + 'px'
@@ -89,6 +92,9 @@ function updateTheme(event) {
   }
 }
 
-function updateFontFamily() {
-  console.log(fontFamily.value);
+function updateFontFamily(event) {
+  document.documentElement.style.setProperty(
+    '--global-font-family',
+    event.target.value
+  );
 }
