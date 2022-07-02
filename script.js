@@ -1,4 +1,4 @@
-let mainColor, secondaryColor, accentColor, theme, fontFamily;
+let mainColor, secondaryColor, accentColor, theme, fontFamily, spacingRadios;
 
 window.addEventListener('load', startup, false);
 
@@ -30,6 +30,24 @@ function startup() {
   );
   accentColor.addEventListener('input', updateFirst('--accent-color'), false);
   accentColor.addEventListener('change', updateAll('--accent-color'), false);
+
+  spacingRadios = document.querySelectorAll('input');
+  for (const radio of spacingRadios) {
+    radio.onclick = function (event) {
+      if (event.target.value === 'small') {
+        updateSpacing('density-s');
+      } else if (event.target.value === 'medium') {
+        updateSpacing('density-m');
+      } else if (event.target.value === 'large') {
+        updateSpacing('density-l');
+      }
+    };
+  }
+}
+
+function updateSpacing(density) {
+  let densityChosen = document.getElementById('density');
+  densityChosen.href = `${density}.css`;
 }
 
 function updateFirst(color) {
