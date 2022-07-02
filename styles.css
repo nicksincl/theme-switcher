@@ -45,6 +45,10 @@ form {
   overflow-y: auto;
 }
 
+input, select{
+  border-radius: var(--global-border-radius);
+}
+
 .label-top label,
 .label-top input,
 .label-top select {

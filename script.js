@@ -1,4 +1,10 @@
-let mainColor, secondaryColor, accentColor, theme, fontFamily, spacingRadios;
+let mainColor,
+  secondaryColor,
+  accentColor,
+  theme,
+  fontFamily,
+  spacingRadios,
+  borderRadius;
 
 window.addEventListener('load', startup, false);
 
@@ -43,6 +49,17 @@ function startup() {
       }
     };
   }
+
+  borderRadius = document.querySelector('input[type=range]');
+  borderRadius.addEventListener('change', updateBorderRadius, false);
+  borderRadius.addEventListener('input', updateBorderRadius, false);
+}
+
+function updateBorderRadius() {
+  document.documentElement.style.setProperty(
+    '--global-border-radius',
+    event.target.value + 'px'
+  );
 }
 
 function updateSpacing(density) {
