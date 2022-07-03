@@ -12,57 +12,63 @@
     <script type="module" src="script.js"></script>
   </head>
   <body>
-    <form>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
-        viewBox="0 0 39 39"
-        fill="none"
-        id="logo"
-      >
-        <path
-          d="M36 18C36 27.9411 27.9411 36 18 36C8.05887 36 0 27.9411 0 18C0 8.05887 8.05887 0 18 0C27.9411 0 36 8.05887 36 18Z"
-          fill="#F2994A"
-          id="logo-secondary-color"
-        />
-        <path
-          d="M39 21C39 30.9411 30.9411 39 21 39C11.0589 39 3 30.9411 3 21C3 11.0589 11.0589 3 21 3C30.9411 3 39 11.0589 39 21Z"
-          fill="#2F80ED"
-          id="logo-main-color"
-        />
-      </svg>
-
-      <fieldset class="label-top">
-        <legend>Theme</legend>
-        <p>
-          <label for="theme">Mode</label>
-          <select id="theme" type="theme" name="theme">
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-          </select>
-        </p>
-      </fieldset>
-      <fieldset class="label-top">
-        <legend>Color</legend>
-        <p>
-          <label for="main">Main</label>
-          <input id="main-color" type="color" name="main" value="#2f80ed" />
-        </p>
-        <p>
-          <label for="secondary">Secondary</label>
-          <input
-            id="secondary-color"
-            type="color"
-            name="secondary"
-            value="#f2994a"
+    <div class="content-sidebar">
+      <form class="sidebar">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 39 39"
+          fill="none"
+          id="logo"
+        >
+          <path
+            d="M36 18C36 27.9411 27.9411 36 18 36C8.05887 36 0 27.9411 0 18C0 8.05887 8.05887 0 18 0C27.9411 0 36 8.05887 36 18Z"
+            fill="#F2994A"
+            id="logo-secondary-color"
           />
-        </p>
-        <p>
-          <label for="accent">Accent</label>
-          <input id="accent-color" type="color" name="accent" value="#f2f2f2" />
-        </p>
-        <!--         <p>
+          <path
+            d="M39 21C39 30.9411 30.9411 39 21 39C11.0589 39 3 30.9411 3 21C3 11.0589 11.0589 3 21 3C30.9411 3 39 11.0589 39 21Z"
+            fill="#2F80ED"
+            id="logo-main-color"
+          />
+        </svg>
+
+        <fieldset class="label-top">
+          <legend>Theme</legend>
+          <p>
+            <label for="theme">Mode</label>
+            <select id="theme" type="theme" name="theme">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </p>
+        </fieldset>
+        <fieldset class="label-top">
+          <legend>Color</legend>
+          <p>
+            <label for="main">Main</label>
+            <input id="main-color" type="color" name="main" value="#2f80ed" />
+          </p>
+          <p>
+            <label for="secondary">Secondary</label>
+            <input
+              id="secondary-color"
+              type="color"
+              name="secondary"
+              value="#f2994a"
+            />
+          </p>
+          <p>
+            <label for="accent">Accent</label>
+            <input
+              id="accent-color"
+              type="color"
+              name="accent"
+              value="#f2f2f2"
+            />
+          </p>
+          <!--         <p>
           <label for="text">Text</label>
           <input type="color" name="text" />
         </p>
@@ -70,89 +76,91 @@
           <label for="background">Background</label>
           <input type="color" name="background" />
         </p> -->
-      </fieldset>
-      <fieldset class="label-top">
-        <legend>Font</legend>
-        <p>
-          <label for="family">Family</label>
-          <select id="font-family" type="family" name="family">
-            <option value="arial">Arial</option>
-            <option value="verdana">Verdana</option>
-            <option value="helvetica">Helvetica</option>
-            <option value="geneva">Geneva</option>
-            <option value="courier">Courier</option>
-            <option value="papyrus">Papyrus</option>
-          </select>
-        </p>
-      </fieldset>
-      <fieldset>
-        <legend>Density</legend>
-        <p>
-          <input type="radio" name="spacing" value="small" id="small" />
-          <label for="small">Small</label>
-        </p>
-        <p>
+        </fieldset>
+        <fieldset class="label-top">
+          <legend>Font</legend>
+          <p>
+            <label for="family">Family</label>
+            <select id="font-family" type="family" name="family">
+              <option value="arial">Arial</option>
+              <option value="verdana">Verdana</option>
+              <option value="helvetica">Helvetica</option>
+              <option value="geneva">Geneva</option>
+              <option value="courier">Courier</option>
+              <option value="papyrus">Papyrus</option>
+            </select>
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>Density</legend>
+          <p>
+            <input type="radio" name="spacing" value="small" id="small" />
+            <label for="small">Small</label>
+          </p>
+          <p>
+            <input
+              type="radio"
+              name="spacing"
+              value="medium"
+              id="medium"
+              checked="checked"
+            />
+            <label for="medium">Medium</label>
+          </p>
+          <p>
+            <input type="radio" name="spacing" value="large" id="large" />
+            <label for="large">Large</label>
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>Border Radius</legend>
           <input
-            type="radio"
-            name="spacing"
-            value="medium"
-            id="medium"
-            checked="checked"
+            type="range"
+            id="border-radius"
+            name="border-radius"
+            min="0"
+            max="8"
+            value="2"
           />
-          <label for="medium">Medium</label>
-        </p>
-        <p>
-          <input type="radio" name="spacing" value="large" id="large" />
-          <label for="large">Large</label>
-        </p>
-      </fieldset>
-      <fieldset>
-        <legend>Border Radius</legend>
-        <input
-          type="range"
-          id="border-radius"
-          name="border-radius"
-          min="0"
-          max="8"
-          value="2"
-        />
-      </fieldset>
-      <a
-        href="https://www.figma.com/file/FbPKrYDqpyxVGlccfDaG40/theme-switcher?node-id=2%3A2"
-        target="_blank"
-        >Figma Design</a
-      >
-    </form>
-    <main>
-      <header>
-        <h1>Theme Switcher</h1>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, totam
-          minus!
-        </p>
-      </header>
+        </fieldset>
+        <a
+          href="https://www.figma.com/file/FbPKrYDqpyxVGlccfDaG40/theme-switcher?node-id=2%3A2"
+          target="_blank"
+          >Figma Design</a
+        >
+      </form>
 
-      <nav>
-        <h2>Table of Contents</h2>
-        <ol>
-          <li>Table</li>
-          <li>Lists</li>
-          <li>Forms</li>
-          <li>Buttons</li>
-        </ol>
-      </nav>
+      <main>
+        <header>
+          <h1>Theme Switcher</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas,
+            totam minus!
+          </p>
+        </header>
 
-      <section>
-        <h2>1. Table</h2>
-      </section>
+        <nav>
+          <h2>Table of Contents</h2>
+          <ol>
+            <li>Table</li>
+            <li>Lists</li>
+            <li>Forms</li>
+            <li>Buttons</li>
+          </ol>
+        </nav>
 
-      <section>
-        <h2>2. Forms</h2>
-      </section>
+        <section>
+          <h2>1. Table</h2>
+        </section>
 
-      <section>
-        <h2>3. Buttons</h2>
-      </section>
-    </main>
+        <section>
+          <h2>2. Forms</h2>
+        </section>
+
+        <section>
+          <h2>3. Buttons</h2>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

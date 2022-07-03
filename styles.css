@@ -4,6 +4,14 @@
 }
 body {
   background-color: var(--white-color);
+  margin: auto;
+}
+
+.content-sidebar {
+  display: flex;
+  max-width: 1280px;
+  align-items: stretch;
+  margin: auto;
 }
 
 h1 {
@@ -27,22 +35,28 @@ p {
 }
 
 main {
-  height: 100vh;
-  margin: 0 auto;
+  padding: 0 4em;
   margin-top: calc(var(--spacing-base) * 48);
-  width: 50%;
+  flex: 1 1 70%;
+}
+
+.sidebar {
+  flex: 1 1 30%;
+  max-width: 10rem;
+  min-width: 6rem;
+  padding: 5px;
 }
 
 form {
-  height: 100vh;
-  position: fixed;
+  /*   
+  position: fixed; */
   background-color: var(--accent-color);
-  width: 220px;
+  /*   width: 220px;
   top: 0;
   left: 0;
   z-index: 5;
-  padding: 30px;
-  overflow-y: auto;
+  
+  overflow-y: auto; */
 }
 
 input,
