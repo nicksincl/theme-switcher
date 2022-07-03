@@ -5,12 +5,6 @@
   font-family: var(--global-font-family);
 }
 
-html,
-body,
-.content-sidebar {
-  height: 100%;
-}
-
 body {
   background-color: var(--white-color);
   margin: auto;

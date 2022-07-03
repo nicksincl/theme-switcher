@@ -1,9 +1,11 @@
-.container div {
-  /* max-width: 7em; */
+.container p {
   flex: 1 1 50%;
- /*  display: inline-block; */
-  margin-bottom: 1rem;
-  padding-right: 1rem;
+  margin-top: 0;
+}
+
+.container label {
+  display: block;
+  color: var(--black-color);
 }
 
 .container legend {
@@ -13,7 +15,15 @@
 .container form {
   max-width: 40em;
 }
+.container input {
+  width: 90%;
+}
 
 .button-group {
   float: right;
+}
+
+.container .container {
+  padding: 0;
+  max-width: 21em;
 }
