@@ -1,7 +1,15 @@
+@import "button-styles.css";
 * {
   box-sizing: border-box;
   font-family: var(--global-font-family);
 }
+
+html,
+body,
+.content-sidebar {
+  height: 100%;
+}
+
 body {
   background-color: var(--white-color);
   margin: auto;
@@ -124,3 +132,13 @@ section h2 {
 #logo-secondary-color {
   fill: var(--secondary-color);
 }
+
+.section-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--accent-color);
+  border-radius: var(--global-border-radius);
+  padding: 4em;
+}
+
