@@ -11,6 +11,10 @@ td {
   border-collapse: collapse;
   background-color: var(--white-color);
   color: var(--black-color);
+  font-size: var(--font-size-m);
+}
+tr {
+  height: var(--spacing-m);
 }
 
 th[scope='col'] {

@@ -5,4 +5,9 @@
   --font-size-s: 0.75rem;
 
   --spacing-base: 1.75px;
+
+  --spacing-xl: 4rem;
+  --spacing-l: 3rem;
+  --spacing-m: 2rem;
+  --spacing-s: 1rem;
 }
