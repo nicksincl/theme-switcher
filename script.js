@@ -56,6 +56,37 @@ function startup() {
   borderRadius = document.querySelector('input[type=range]');
   borderRadius.addEventListener('change', updateBorderRadius, false);
   borderRadius.addEventListener('input', updateBorderRadius, false);
+
+  // fetch json from people.json
+  fetch('people.json')
+    .then((response) => response.json())
+    .then((data) => appendTable(data))
+    .catch((err) => console.log(err.message));
+}
+
+//create table and fill with json
+function appendTable(data) {
+  let thead = document.querySelector('thead');
+  let tbody = document.querySelector('tbody');
+
+  // create thead rows
+  let newRow = thead.insertRow(-1);
+  for (let val of Object.keys(data[0])) {
+    let newCell = document.createElement('th');
+    newCell.innerHTML = val;
+    newRow.appendChild(newCell);
+  }
+
+  // create tbody rows
+  for (let col of data) {
+    newRow = tbody.insertRow(-1);
+    console.log(col);
+    for (let [index, val] of Object.values(col).entries()) {
+      let newCell = newRow.insertCell(index);
+      let cellText = document.createTextNode(val);
+      newCell.appendChild(cellText);
+    }
+  }
 }
 
 function updateBorderRadius(event) {
