@@ -4,7 +4,8 @@ let mainColor,
   theme,
   fontFamily,
   spacingRadios,
-  borderRadius;
+  borderRadius,
+  dataSet;
 
 window.addEventListener('load', startup, false);
 
@@ -60,15 +61,40 @@ function startup() {
   // fetch json from people.json
   fetch('people.json')
     .then((response) => response.json())
-    .then((data) => appendTable(data))
+    .then((data) => appendTable(data, false))
+    .catch((err) => console.log(err.message));
+
+  dataSet = document.getElementById('data-set');
+  dataSet.addEventListener('change', getJSON, false);
+}
+function getJSON(e) {
+  console.log(e.target.value);
+  let url;
+  if (e.target.value === 'people') {
+    url = 'people.json';
+  } else {
+    url = `https://jsonplaceholder.typicode.com/${e.target.value}/?_limit=10`;
+  }
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => appendTable(data, true))
     .catch((err) => console.log(err.message));
 }
 
 //create table and fill with json
-function appendTable(data) {
+function appendTable(data, reset) {
+  let table = document.querySelector('table');
   let thead = document.querySelector('thead');
   let tbody = document.querySelector('tbody');
 
+  //remove and replace thead and tbody for new json data set
+  if (reset) {
+    thead.remove();
+    tbody.remove();
+    table.insertAdjacentHTML('beforeend', '<thead></thead><tbody></tbody>');
+    thead = document.querySelector('thead');
+    tbody = document.querySelector('tbody');
+  }
   // create thead rows
   let newRow = thead.insertRow(-1);
   for (let val of Object.keys(data[0])) {
