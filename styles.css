@@ -53,22 +53,8 @@ main {
 }
 
 form {
-  /*   
-  position: fixed; */
   background-color: var(--accent-color);
-  /*   width: 220px;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  
-  overflow-y: auto; */
 }
-
-input,
-select {
-  border-radius: var(--global-border-radius);
-}
-
 .label-top label,
 .label-top input,
 .label-top select {
@@ -85,7 +71,8 @@ select {
 
 input,
 select {
-  background: none;
+  border-radius: var(--global-border-radius);
+  background-color: var(--white-color);
   color: var(--black-color);
   height: calc(var(--spacing-base) * 12);
   border: 1px solid var(--main-color);
