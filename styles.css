@@ -33,7 +33,8 @@ h3 {
   color: var(--black-color);
 }
 
-p {
+p,
+li {
   font-size: var(--font-size-s);
   color: var(--black-color);
 }
