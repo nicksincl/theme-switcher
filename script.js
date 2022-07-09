@@ -5,7 +5,8 @@ let mainColor,
   fontFamily,
   spacingRadios,
   borderRadius,
-  dataSet;
+  dataSet,
+  cardButton;
 
 window.addEventListener('load', startup, false);
 
@@ -66,7 +67,39 @@ function startup() {
 
   dataSet = document.getElementById('data-set');
   dataSet.addEventListener('change', getJSON, false);
+
+  fetchImage();
+
+  cardButton = document.getElementById('card-group-button');
+  cardButton.addEventListener('click', fetchImage, false);
 }
+
+// fetch dog images from images.dog.ceo api
+function fetchImage() {
+  fetch('https://dog.ceo/api/breeds/image/random')
+    .then((response) => response.json())
+    .then((data) => addImageToCard(data))
+    .catch((err) => console.log(err.message));
+}
+
+function addImageToCard(result) {
+  const cardImg = document.getElementById('card-img');
+  const para = cardImg.nextElementSibling.nextElementSibling;
+
+  cardImg.src = result.message;
+  let breed = result.message.split('/')[4];
+  if (breed.indexOf('-') !== -1) {
+    let nameArr = [];
+    for (const partOfName of breed.split('-')) {
+      nameArr.push(capitaliseFirstLetter(partOfName));
+    }
+    para.innerHTML = nameArr.join(' ');
+  } else {
+    para.innerHTML = capitaliseFirstLetter(breed);
+  }
+}
+
+//get json from jsonplaceholder.typicode.com api or people.json
 function getJSON(e) {
   console.log(e.target.value);
   let url;
@@ -152,9 +185,7 @@ function updateAll(color) {
 }
 
 function updateTheme(event) {
-  
   let stylesheet = document.getElementById('mode');
-
   if (event.target.value === 'dark') {
     stylesheet.href = 'dark.css';
   } else if (event.target.value === 'light') {

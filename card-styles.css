@@ -7,3 +7,15 @@
   border-radius: var(--global-border-radius);
   padding: 1rem;
 }
+
+.card-img {
+  width: inherit;
+  border-radius: var(--global-border-radius);
+  max-width: 30rem;
+  max-height: 25em;
+}
+
+#card-group-button {
+  margin: 0;
+  width: 100%;
+}
