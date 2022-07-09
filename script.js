@@ -73,20 +73,32 @@ function appendTable(data) {
   let newRow = thead.insertRow(-1);
   for (let val of Object.keys(data[0])) {
     let newCell = document.createElement('th');
-    newCell.innerHTML = val;
+    newCell.setAttribute('scope', 'col');
+    let cap = val.match(/[A-Z]/g);
+
+    if (cap) {
+      let indexOfCap = val.indexOf(cap);
+      let cappedFirstWord = capitaliseFirstLetter(val.slice(0, indexOfCap));
+      newCell.innerHTML = cappedFirstWord + ' ' + val.slice(indexOfCap);
+    } else {
+      newCell.innerHTML = capitaliseFirstLetter(val);
+    }
     newRow.appendChild(newCell);
   }
 
   // create tbody rows
   for (let col of data) {
     newRow = tbody.insertRow(-1);
-    console.log(col);
     for (let [index, val] of Object.values(col).entries()) {
       let newCell = newRow.insertCell(index);
       let cellText = document.createTextNode(val);
       newCell.appendChild(cellText);
     }
   }
+}
+
+function capitaliseFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 function updateBorderRadius(event) {
