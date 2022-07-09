@@ -152,6 +152,7 @@ function updateAll(color) {
 }
 
 function updateTheme(event) {
+  
   let stylesheet = document.getElementById('mode');
 
   if (event.target.value === 'dark') {
