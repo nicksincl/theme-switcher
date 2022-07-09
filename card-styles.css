@@ -1,0 +1,9 @@
+.card-group {
+  display: flex;
+  gap: 2em;
+}
+.card {
+  background-color: var(--white-color);
+  border-radius: var(--global-border-radius);
+  padding: 1rem;
+}

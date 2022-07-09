@@ -1,6 +1,7 @@
 @import 'button-styles.css';
 @import 'form-styles.css';
 @import 'table-styles.css';
+@import 'card-styles.css';
 * {
   box-sizing: border-box;
   font-family: var(--global-font-family);
