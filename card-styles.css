@@ -8,11 +8,10 @@
   padding: 1rem;
 }
 
-.card-img {
-  width: inherit;
+#card-img {
   border-radius: var(--global-border-radius);
-  max-width: 30rem;
-  max-height: 25em;
+  width: 100%;
+  max-width: 20rem;
 }
 
 #card-group-button {
