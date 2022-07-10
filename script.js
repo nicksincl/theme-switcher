@@ -36,8 +36,16 @@ function startup() {
     updateAll('--secondary-color'),
     false
   );
-  backgroundColor.addEventListener('input', updateFirst('--background-color'), false);
-  backgroundColor.addEventListener('change', updateAll('--background-color'), false);
+  backgroundColor.addEventListener(
+    'input',
+    updateFirst('--background-color'),
+    false
+  );
+  backgroundColor.addEventListener(
+    'change',
+    updateAll('--background-color'),
+    false
+  );
 
   fontFamily = document.querySelector('#font-family');
   fontFamily.addEventListener('change', updateTheme, false);
@@ -169,7 +177,7 @@ function updateBorderRadius(event) {
 
 function updateSpacing(density) {
   let densityChosen = document.getElementById('density');
-  densityChosen.href = `${density}.css`;
+  densityChosen.href = `./variables/density/${density}.css`;
 }
 
 function updateFirst(color) {
@@ -187,9 +195,9 @@ function updateAll(color) {
 function updateTheme(event) {
   let stylesheet = document.getElementById('mode');
   if (event.target.value === 'dark') {
-    stylesheet.href = 'dark.css';
+    stylesheet.href = './variables/theme/dark.css';
   } else if (event.target.value === 'light') {
-    stylesheet.href = 'light.css';
+    stylesheet.href = './variables/theme/light.css';
   }
 }
 
