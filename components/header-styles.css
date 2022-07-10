@@ -26,10 +26,6 @@
   display: inline-block;
 }
 
-.header fieldset:nth-child(2n) {
-  margin-left: 1.5rem;
-}
-
 fieldset {
   border: none;
 }
