@@ -14,7 +14,7 @@ body {
   margin: auto;
 }
 
-.content-sidebar {
+.content {
   display: flex;
   max-width: 1280px;
   align-items: stretch;
