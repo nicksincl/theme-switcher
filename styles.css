@@ -1,8 +1,8 @@
-@import 'button-styles.css';
-@import 'form-styles.css';
-@import 'table-styles.css';
-@import 'card-styles.css';
-@import 'header-styles.css';
+@import './components/button-styles.css';
+@import './components/form-styles.css';
+@import './components/table-styles.css';
+@import './components/card-styles.css';
+@import './components/header-styles.css';
 
 * {
   box-sizing: border-box;
