@@ -75,7 +75,7 @@ section h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: var(--accent-color);
+  background-color: var(--background-color);
   border-radius: var(--global-border-radius);
   padding: 4em;
 }

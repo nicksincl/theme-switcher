@@ -1,6 +1,6 @@
 let mainColor,
   secondaryColor,
-  accentColor,
+  backgroundColor,
   theme,
   fontFamily,
   spacingRadios,
@@ -22,7 +22,7 @@ function startup() {
   // color picker inputs
   mainColor = document.querySelector('#main-color');
   secondaryColor = document.querySelector('#secondary-color');
-  accentColor = document.querySelector('#accent-color');
+  backgroundColor = document.querySelector('#background-color');
 
   mainColor.addEventListener('input', updateFirst('--main-color'), false);
   mainColor.addEventListener('change', updateAll('--main-color'), false);
@@ -36,8 +36,8 @@ function startup() {
     updateAll('--secondary-color'),
     false
   );
-  accentColor.addEventListener('input', updateFirst('--accent-color'), false);
-  accentColor.addEventListener('change', updateAll('--accent-color'), false);
+  backgroundColor.addEventListener('input', updateFirst('--background-color'), false);
+  backgroundColor.addEventListener('change', updateAll('--background-color'), false);
 
   fontFamily = document.querySelector('#font-family');
   fontFamily.addEventListener('change', updateTheme, false);

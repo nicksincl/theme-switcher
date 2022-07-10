@@ -14,7 +14,7 @@
 .header {
   display: flex;
   justify-content: space-evenly;
-  background-color: var(--accent-color);
+  background-color: var(--background-color);
   left: 0;
   position: fixed;
   width: 100%;
