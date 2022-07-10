@@ -68,7 +68,7 @@ function startup() {
   dataSet = document.getElementById('data-set');
   dataSet.addEventListener('change', getJSON, false);
 
-  fetchImage();
+  //fetchImage();
 
   cardButton = document.getElementById('card-group-button');
   cardButton.addEventListener('click', fetchImage, false);

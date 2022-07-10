@@ -2,6 +2,8 @@
 @import 'form-styles.css';
 @import 'table-styles.css';
 @import 'card-styles.css';
+@import 'header-styles.css';
+
 * {
   box-sizing: border-box;
   font-family: var(--global-font-family);
@@ -46,30 +48,6 @@ main {
   flex: 1 1 70%;
 }
 
-.sidebar {
-  flex: 1 1 30%;
-  max-width: 10rem;
-  min-width: 6rem;
-  padding: 5px;
-}
-
-form {
-  background-color: var(--accent-color);
-}
-.label-top label,
-.label-top input,
-.label-top select {
-  display: block;
-}
-
-.label-top input,
-.label-top select {
-  width: 100%;
-}
-.label-top label {
-  margin-bottom: calc(var(--spacing-base) * 2);
-}
-
 input,
 select {
   border-radius: var(--global-border-radius);
@@ -85,37 +63,12 @@ input[type='radio'] {
   margin: 3px auto 3px 0px;
 }
 
-#logo {
-  margin-bottom: calc(var(--spacing-base) * 15);
-}
-
-fieldset {
-  border: none;
-  padding: 0px 0px calc(var(--spacing-base) * 15) 0px;
-}
-
-fieldset legend {
-  font-size: var(--font-size-m);
-  color: var(--black-color);
-  font-weight: 700;
-  padding: 0;
-}
-
-header,
 section {
   margin-bottom: calc(var(--spacing-base) * 30);
 }
 
 section h2 {
   border-bottom: var(--spacing-base) solid var(--main-color);
-}
-
-#logo-main-color {
-  fill: var(--main-color);
-}
-
-#logo-secondary-color {
-  fill: var(--secondary-color);
 }
 
 .container {

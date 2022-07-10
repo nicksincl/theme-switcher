@@ -1,0 +1,49 @@
+#logo {
+  margin-bottom: calc(var(--spacing-base) * 15);
+  flex-shrink: 0;
+}
+
+#logo-main-color {
+  fill: var(--main-color);
+}
+
+#logo-secondary-color {
+  fill: var(--secondary-color);
+}
+
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--accent-color);
+  left: 0;
+  position: fixed;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.header div {
+  display: inline-block;
+}
+
+.header fieldset:nth-child(2n) {
+  margin-left: 1.5rem;
+}
+
+fieldset {
+  border: none;
+}
+
+fieldset legend {
+  font-size: var(--font-size-m);
+  color: var(--black-color);
+  font-weight: 700;
+  padding: 0;
+}
+
+form {
+  background-color: var(--accent-color);
+}
+
+.label-top label {
+  margin-bottom: calc(var(--spacing-base) * 2);
+}
