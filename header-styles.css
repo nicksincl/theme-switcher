@@ -19,6 +19,7 @@
   position: fixed;
   width: 100%;
   padding-top: 1rem;
+  box-shadow: 0 0 4px 0 rgb(0 0 0 / 8%), 0 2px 4px 0 rgb(0 0 0 / 12%);
 }
 
 .header div {
@@ -34,10 +35,15 @@ fieldset {
 }
 
 fieldset legend {
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-sm);
   color: var(--black-color);
   font-weight: 700;
   padding: 0;
+}
+
+label {
+  font-size: var(--font-size-sm);
+  color: var(--black-color);
 }
 
 form {
