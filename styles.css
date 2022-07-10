@@ -64,7 +64,9 @@ input[type='radio'] {
   margin: 3px auto 3px 0px;
 }
 
-section {
+section,
+nav,
+main header {
   margin-bottom: calc(var(--spacing-base) * 30);
 }
 

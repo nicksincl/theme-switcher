@@ -35,7 +35,7 @@ fieldset {
 }
 
 fieldset legend {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-s);
   color: var(--black-color);
   font-weight: 700;
   padding: 0;
