@@ -1,29 +1,30 @@
-.container p {
-  flex: 1 1 50%;
-  margin-top: 0;
+form {
+  padding: 2em;
+  background-color: var(--white-color);
+  border-radius: var(--global-border-radius);
 }
 
-.container label {
-  display: block;
-  color: var(--black-color);
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  padding: 0;
+  max-width: 20.125em;
+  margin: 0;
 }
-
-.container legend {
+.form-group > div {
   margin-bottom: 1rem;
 }
 
-.container form {
-  max-width: 40em;
-}
-.container input {
-  width: 90%;
+.form-group > legend {
+  margin-bottom: 1rem;
 }
 
+.form-group label {
+  display: block;
+  color: var(--black-color);
+  margin-bottom: 0.2rem;
+}
 .button-group {
   float: right;
-}
-
-.container .container {
-  padding: 0;
-  max-width: 21em;
 }

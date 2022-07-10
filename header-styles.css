@@ -46,10 +46,6 @@ label {
   color: var(--black-color);
 }
 
-form {
-  background-color: var(--accent-color);
-}
-
 .label-top label {
   margin-bottom: calc(var(--spacing-base) * 2);
 }
