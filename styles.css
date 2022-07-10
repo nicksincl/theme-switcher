@@ -22,23 +22,24 @@ body {
 }
 
 h1 {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-6xl);
   color: var(--black-color);
 }
 
 h2 {
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-2xl);
   color: var(--black-color);
 }
 
 h3 {
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-xl);
   color: var(--black-color);
 }
 
 p,
-li {
-  font-size: var(--font-size-s);
+li,
+label {
+  font-size: var(--font-size-m);
   color: var(--black-color);
 }
 
