@@ -45,3 +45,15 @@ label {
 .label-top label {
   margin-bottom: calc(var(--spacing-base) * 2);
 }
+
+input[type='range'] {
+  width: 80%;
+}
+
+#density {
+  min-width: 7rem;
+}
+
+#color {
+  min-width: 11rem;
+}
