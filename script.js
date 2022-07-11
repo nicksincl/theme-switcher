@@ -52,7 +52,7 @@ function startup() {
 
   spacingRadios = document.querySelectorAll('input');
   for (const radio of spacingRadios) {
-    radio.onclick = function (event) {
+    radio.onclick = (event) => {
       if (event.target.value === 'small') {
         updateSpacing('density-s');
       } else if (event.target.value === 'medium') {
@@ -138,7 +138,7 @@ function appendTable(data, reset) {
   }
   // create thead rows
   let newRow = thead.insertRow(-1);
-  for (let val of Object.keys(data[0])) {
+  for (const val of Object.keys(data[0])) {
     let newCell = document.createElement('th');
     newCell.setAttribute('scope', 'col');
     let cap = val.match(/[A-Z]/g);
@@ -146,7 +146,7 @@ function appendTable(data, reset) {
     if (cap) {
       let indexOfCap = val.indexOf(cap);
       let cappedFirstWord = capitaliseFirstLetter(val.slice(0, indexOfCap));
-      newCell.innerHTML = cappedFirstWord + ' ' + val.slice(indexOfCap);
+      newCell.innerHTML = `${cappedFirstWord} ` + val.slice(indexOfCap);
     } else {
       newCell.innerHTML = capitaliseFirstLetter(val);
     }
@@ -171,29 +171,29 @@ function capitaliseFirstLetter(str) {
 function updateBorderRadius(event) {
   document.documentElement.style.setProperty(
     '--global-border-radius',
-    event.target.value + 'px'
+    `${event.target.value}px`
   );
 }
 
 function updateSpacing(density) {
-  let densityChosen = document.getElementById('density');
+  const densityChosen = document.getElementById('density');
   densityChosen.href = `./variables/density/${density}.css`;
 }
 
 function updateFirst(color) {
-  return function (event) {
+  return (event) => {
     document.documentElement.style.setProperty(color, event.target.value);
   };
 }
 
 function updateAll(color) {
-  return function (event) {
+  return (event) => {
     document.documentElement.style.setProperty(color, event.target.value);
   };
 }
 
 function updateTheme(event) {
-  let stylesheet = document.getElementById('mode');
+  const stylesheet = document.getElementById('mode');
   if (event.target.value === 'dark') {
     stylesheet.href = './variables/theme/dark.css';
   } else if (event.target.value === 'light') {
