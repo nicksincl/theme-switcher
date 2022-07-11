@@ -128,7 +128,7 @@ function appendTable(data, reset) {
   let table = document.querySelector('table');
   let thead = document.querySelector('thead');
   let tbody = document.querySelector('tbody');
-console.log(reset)
+
   //remove and replace thead and tbody for new json set
   if (reset) {
     thead.remove();
