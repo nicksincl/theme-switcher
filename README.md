@@ -20,3 +20,9 @@ APIS\
 
 DESIGN\
 1.[Typescale](https://type-scale.com/)
+
+## To do
+
+*Add in a randomise button for random styles in header\
+*Add a reset button\
+\*Reset the styles back to default when a user switches mode\
