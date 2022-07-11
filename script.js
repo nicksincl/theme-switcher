@@ -47,7 +47,6 @@ function startup() {
     false
   );
 
-
   //switch font family on user input
   fontFamily = document.querySelector('#font-family');
   fontFamily.addEventListener('change', updateTheme, false);
@@ -65,39 +64,37 @@ function startup() {
     };
   }
 
-
   //alter border radius on user input
   borderRadius = document.querySelector('input[type=range]');
   borderRadius.addEventListener('change', updateBorderRadius, false);
   borderRadius.addEventListener('input', updateBorderRadius, false);
 
-
   // fetch json from people.json
-  fetch('people.json')
-    .then((response) => response.json())
-    .then((data) => appendTable(data, false))
-    .catch((err) => console.log(err.message));
+  fetchFromApi('people.json', appendTable, false);
 
   dataSet = document.getElementById('data-set');
   dataSet.addEventListener('change', getJSON, false);
 
-  //fet a Dog image on document load
-  //fetchImage();
+  //fetch a Dog image on document load
+  fetchFromApi('https://dog.ceo/api/breeds/image/random', addImageToCard)
 
   //switch Dog image on user click of 'Fetch!' button
   cardButton = document.getElementById('card-group-button');
-  cardButton.addEventListener('click', fetchImage, false);
+  cardButton.addEventListener('click', getImage, false);
 }
 
-// fetch dog images from images.dog.ceo api
-function fetchImage() {
-  fetch('https://dog.ceo/api/breeds/image/random')
+function getImage() {
+  fetchFromApi('https://dog.ceo/api/breeds/image/random', addImageToCard);
+}
+
+function fetchFromApi(url, callback, rebuild) {
+  fetch(url)
     .then((response) => response.json())
-    .then((data) => addImageToCard(data))
+    .then((data) => callback(data, rebuild))
     .catch((err) => console.log(err.message));
 }
 
-// add Dog image to card img 
+// add Dog image to card img
 function addImageToCard(result) {
   const cardImg = document.getElementById('card-img');
   const para = cardImg.nextElementSibling.nextElementSibling;
@@ -117,17 +114,13 @@ function addImageToCard(result) {
 
 //get json from jsonplaceholder.typicode.com api or people.json
 function getJSON(e) {
-  console.log(e.target.value);
   let url;
   if (e.target.value === 'people') {
     url = 'people.json';
   } else {
     url = `https://jsonplaceholder.typicode.com/${e.target.value}/?_limit=10`;
   }
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => appendTable(data, true))
-    .catch((err) => console.log(err.message));
+  fetchFromApi(url, appendTable, true);
 }
 
 //create table and fill with json
@@ -135,7 +128,7 @@ function appendTable(data, reset) {
   let table = document.querySelector('table');
   let thead = document.querySelector('thead');
   let tbody = document.querySelector('tbody');
-
+console.log(reset)
   //remove and replace thead and tbody for new json set
   if (reset) {
     thead.remove();
@@ -144,6 +137,7 @@ function appendTable(data, reset) {
     thead = document.querySelector('thead');
     tbody = document.querySelector('tbody');
   }
+
   // create thead rows
   let newRow = thead.insertRow(-1);
   for (const val of Object.keys(data[0])) {
