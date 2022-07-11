@@ -24,29 +24,31 @@ function startup() {
   secondaryColor = document.querySelector('#secondary-color');
   backgroundColor = document.querySelector('#background-color');
 
-  mainColor.addEventListener('input', updateFirst('--main-color'), false);
-  mainColor.addEventListener('change', updateAll('--main-color'), false);
+  mainColor.addEventListener('input', updateColor('--main-color'), false);
+  mainColor.addEventListener('change', updateColor('--main-color'), false);
   secondaryColor.addEventListener(
     'input',
-    updateFirst('--secondary-color'),
+    updateColor('--secondary-color'),
     false
   );
   secondaryColor.addEventListener(
     'change',
-    updateAll('--secondary-color'),
+    updateColor('--secondary-color'),
     false
   );
   backgroundColor.addEventListener(
     'input',
-    updateFirst('--background-color'),
+    updateColor('--background-color'),
     false
   );
   backgroundColor.addEventListener(
     'change',
-    updateAll('--background-color'),
+    updateColor('--background-color'),
     false
   );
 
+
+  //switch font family on user input
   fontFamily = document.querySelector('#font-family');
   fontFamily.addEventListener('change', updateTheme, false);
 
@@ -63,9 +65,12 @@ function startup() {
     };
   }
 
+
+  //alter border radius on user input
   borderRadius = document.querySelector('input[type=range]');
   borderRadius.addEventListener('change', updateBorderRadius, false);
   borderRadius.addEventListener('input', updateBorderRadius, false);
+
 
   // fetch json from people.json
   fetch('people.json')
@@ -76,8 +81,10 @@ function startup() {
   dataSet = document.getElementById('data-set');
   dataSet.addEventListener('change', getJSON, false);
 
+  //fet a Dog image on document load
   //fetchImage();
 
+  //switch Dog image on user click of 'Fetch!' button
   cardButton = document.getElementById('card-group-button');
   cardButton.addEventListener('click', fetchImage, false);
 }
@@ -90,6 +97,7 @@ function fetchImage() {
     .catch((err) => console.log(err.message));
 }
 
+// add Dog image to card img 
 function addImageToCard(result) {
   const cardImg = document.getElementById('card-img');
   const para = cardImg.nextElementSibling.nextElementSibling;
@@ -128,7 +136,7 @@ function appendTable(data, reset) {
   let thead = document.querySelector('thead');
   let tbody = document.querySelector('tbody');
 
-  //remove and replace thead and tbody for new json data set
+  //remove and replace thead and tbody for new json set
   if (reset) {
     thead.remove();
     tbody.remove();
@@ -180,13 +188,7 @@ function updateSpacing(density) {
   densityChosen.href = `./variables/density/${density}.css`;
 }
 
-function updateFirst(color) {
-  return (event) => {
-    document.documentElement.style.setProperty(color, event.target.value);
-  };
-}
-
-function updateAll(color) {
+function updateColor(color) {
   return (event) => {
     document.documentElement.style.setProperty(color, event.target.value);
   };
